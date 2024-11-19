@@ -26,9 +26,11 @@ Install `flexoki-nvim` using your favourite plugin manager:
 
 **Flexoki Dawn**
 
+![flexoki-dawn](https://github.com/user-attachments/assets/8ad5bd55-6da8-4966-8c4e-360be0a8847a)
 
 **Flexoki Moon**
 
+![flexoki-moon](https://github.com/user-attachments/assets/f29beed6-6cf8-48d3-90cb-b4a10f00e373)
 
 ## Options
 
