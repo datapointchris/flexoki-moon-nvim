@@ -42,7 +42,7 @@ Flexoki has two variants: moon, and dawn. By default, `vim.o.background` is foll
 Colour values accept named colours from the palette, e.g. "cyan_two", or valid hex, e.g. "#fa8072".
 
 ```lua
-require("flexoki-nvim").setup({
+require("flexoki").setup({
     variant = "auto", -- auto, moon, or dawn
     dim_inactive_windows = false,
     extend_background_behind_borders = true,
