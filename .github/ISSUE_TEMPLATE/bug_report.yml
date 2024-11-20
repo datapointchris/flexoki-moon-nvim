@@ -45,7 +45,7 @@ body:
         end
 
         require("flexoki-nvim").setup({
-          -- ADD ROSÉ PINE CONFIG THAT IS _NECESSARY_ TO REPRODUCE THE ISSUE
+          -- ADD CONFIG THAT IS _NECESSARY_ TO REPRODUCE THE ISSUE
         })
 
         vim.cmd("colorscheme flexoki-nvim")
