@@ -80,7 +80,7 @@ local function set_highlights()
 	local default_highlights = {
 		ColorColumn = { bg = palette.surface },
 		Conceal = { bg = "NONE" },
-		CurSearch = { fg = palette.base, bg = palette.orange_two },
+		CurSearch = { fg = palette.base, bg = palette.cyan_one },
 		Cursor = { fg = palette.text, bg = palette.highlight_high },
 		CursorColumn = { bg = palette.overlay },
 		-- CursorIM = {},
@@ -126,7 +126,7 @@ local function set_highlights()
 		RedrawDebugClear = { fg = palette.base, bg = palette.orange_two },
 		RedrawDebugComposed = { fg = palette.base, bg = palette.blue_two },
 		RedrawDebugRecompose = { fg = palette.base, bg = palette.red_two },
-		Search = { fg = palette.text, bg = palette.orange_two, blend = 20 },
+		Search = { fg = palette.text, bg = palette.cyan_one, blend = 20 },
 		SignColumn = { fg = palette.text, bg = "NONE" },
 		SpecialKey = { fg = palette.cyan_two },
 		SpellBad = { sp = palette.subtle, undercurl = true },
