@@ -104,7 +104,7 @@ local function set_highlights()
 		Folded = { fg = palette.text, bg = groups.panel },
 		IncSearch = { link = "CurSearch" },
 		LineNr = { fg = palette.muted },
-		MatchParen = { fg = palette.blue_two, bg = palette.blue_two, blend = 25 },
+		MatchParen = { fg = palette.blue_two, bg = palette.blue_one, blend = 20 },
 		ModeMsg = { fg = palette.subtle },
 		MoreMsg = { fg = palette.purple_two },
 		NonText = { fg = palette.muted },
