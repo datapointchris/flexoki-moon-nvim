@@ -911,9 +911,9 @@ local function set_highlights()
 		TreesitterContextLineNumber = { fg = palette.magenta_two, bg = palette.overlay },
 
 		-- RRethy/vim-illuminate
-		IlluminatedWordRead = { link = "LspReferenceRead" },
-		IlluminatedWordText = { link = "LspReferenceText" },
-		IlluminatedWordWrite = { link = "LspReferenceWrite" },
+		IlluminatedWordRead = { bg = palette.overlay },
+		IlluminatedWordText = { bg = palette.overlay },
+		IlluminatedWordWrite = { bg = palette.overlay },
 
 		-- HiPhish/rainbow-delimiters.nvim
 		RainbowDelimiterBlue = { fg = palette.blue_two },
