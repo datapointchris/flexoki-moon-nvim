@@ -970,6 +970,15 @@ local function set_highlights()
 		AvanteReversedSubtitle = { fg = palette.cyan_two },
 		AvanteThirdTitle = { fg = palette.highlight_med, bg = palette.purple_two },
 		AvanteReversedThirdTitle = { fg = palette.purple_two },
+
+		-- folke/todo-comments.nvim
+		TodoBgTODO = { fg = palette.base, bg = palette.cyan_one, bold = styles.bold },
+		TodoBgWARN = { fg = palette.base, bg = palette.orange_one, bold = styles.bold },
+		TodoBgHACK = { link = "TodoBgWARN" },
+		TodoBgFIX = { fg = palette.base, bg = palette.red_one, bold = styles.bold },
+		TodoBgNOTE = { fg = palette.base, bg = palette.blue_one, bold = styles.bold },
+		TodoBgPERF = { fg = palette.base, bg = palette.purple_one, bold = styles.bold },
+		TodoBgTEST = { link = "TodoBgPERF" },
 	}
 	local transparency_highlights = {
 		DiagnosticVirtualTextError = { fg = groups.error },
