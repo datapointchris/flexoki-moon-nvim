@@ -101,7 +101,7 @@ local function set_highlights()
 		FloatBorder = make_border(),
 		FloatTitle = { fg = palette.cyan_two, bg = groups.panel, bold = styles.bold },
 		FoldColumn = { fg = palette.muted },
-		Folded = { fg = palette.text, bg = groups.panel },
+		Folded = { fg = palette.text, bg = palette.overlay, italic = styles.italic },
 		IncSearch = { link = "CurSearch" },
 		LineNr = { fg = palette.muted },
 		MatchParen = { fg = palette.blue_two, bg = palette.blue_one, blend = 20 },
@@ -1003,7 +1003,7 @@ local function set_highlights()
 
 		FloatBorder = { fg = palette.muted, bg = "NONE" },
 		FloatTitle = { fg = palette.cyan_two, bg = "NONE", bold = styles.bold },
-		Folded = { fg = palette.text, bg = "NONE" },
+		Folded = { fg = palette.text, bg = "NONE", italic = styles.italic },
 		NormalFloat = { bg = "NONE" },
 		Normal = { fg = palette.text, bg = "NONE" },
 		NormalNC = { fg = palette.text, bg = config.options.dim_inactive_windows and palette._nc or "NONE" },
