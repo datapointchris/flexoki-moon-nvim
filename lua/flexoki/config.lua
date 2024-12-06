@@ -60,7 +60,7 @@ config.options = {
 		git_merge = "purple_one",
 		git_rename = "blue_one",
 		git_stage = "purple_one",
-		git_text = "magenta_one",
+		git_text = "blue_one",
 		git_untracked = "subtle",
 
 		---@type string | PaletteColor
