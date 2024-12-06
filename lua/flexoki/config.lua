@@ -50,7 +50,7 @@ config.options = {
 		ok = "green_two",
 		warn = "orange_two",
 		note = "blue_two",
-		todo = "yellow_two",
+		todo = "magenta_two",
 
 		git_add = "green_one",
 		git_change = "yellow_one",
