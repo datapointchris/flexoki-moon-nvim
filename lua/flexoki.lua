@@ -993,6 +993,9 @@ local function set_highlights()
 		TodoSignNOTE = { fg = groups.note },
 		TodoSignPERF = { fg = groups.info },
 		TodoSignTEST = { link = "TodoSignPERF" },
+
+		InclineNormal = { bg = palette.overlay },
+		InclineNormalNC = { bg = palette.overlay },
 	}
 	local transparency_highlights = {
 		DiagnosticVirtualTextError = { fg = groups.error },
