@@ -29,6 +29,7 @@ local variants = {
 		highlight_med = "#343331",
 		highlight_high = "#403e3c",
 		none = "none",
+		green_zero = "#EDEECF",
 	},
 	dawn = {
 		_nc = "#f2f0e5",
@@ -58,6 +59,7 @@ local variants = {
 		highlight_med = "#dad8ce",
 		highlight_high = "#cecdc3",
 		none = "none",
+		green_zero = "#EDEECF",
 	},
 }
 

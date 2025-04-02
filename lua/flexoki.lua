@@ -996,6 +996,9 @@ local function set_highlights()
 
 		InclineNormal = { bg = palette.overlay },
 		InclineNormalNC = { bg = palette.overlay },
+
+		-- sindrets/diffview.nvim
+		DiffViewDiffAdd = { bg = palette.green_zero },
 	}
 	local transparency_highlights = {
 		DiagnosticVirtualTextError = { fg = groups.error },
