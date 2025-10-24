@@ -121,6 +121,36 @@ local variants = {
 		none = "none",
 		green_zero = "#ffeaec",
 	},
+	toddler = {
+		_nc = "#4a402f",
+		base = "#342619",
+		surface = "#3c3426",
+		overlay = "#464132",
+		muted = "#726250",
+		subtle = "#c4b199",
+		text = "#d4c4a8",
+		yellow_one = "#e1a100",
+		red_one = "#ce291d",
+		orange_one = "#cf980c",
+		magenta_one = "#cb0036",
+		blue_one = "#5586e6",
+		cyan_one = "#1f554d",
+		purple_one = "#664568",
+		green_one = "#6da700",
+		yellow_two = "#957209",
+		red_two = "#dd634d",
+		orange_two = "#d19812",
+		magenta_two = "#ca1447",
+		blue_two = "#3672da",
+		cyan_two = "#4f7edc",
+		purple_two = "#be0033",
+		green_two = "#7eae0f",
+		highlight_low = "#713d3a",
+		highlight_med = "#693c4e",
+		highlight_high = "#56415c",
+		none = "none",
+		green_zero = "#fff2d8",
+	},
 }
 
 if options.palette ~= nil and next(options.palette) then
@@ -136,4 +166,5 @@ if variants[options.variant] ~= nil then
 	return variants[options.variant]
 end
 
+-- Fallback: return black variant if specified variant doesn't exist
 return variants.black

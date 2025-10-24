@@ -4,7 +4,7 @@
 
 > Flexoki is an inky color scheme for prose and code. Flexoki is designed for reading and writing on digital screens. It is inspired by analog printing inks and warm shades of paper
 
-This is a personal fork with custom variants (black, purple, green) of the Flexoki colorscheme for Neovim.
+This is a personal fork with custom variants (black, purple, green, red, toddler) of the Flexoki colorscheme for Neovim.
 
 **Credits:**
 
@@ -44,18 +44,26 @@ Install using your favourite plugin manager:
 
 ![flexoki-moon-green](https://github.com/user-attachments/assets/green-variant-placeholder)
 
+**Flexoki Moon Red**
+
+![flexoki-moon-red](https://github.com/user-attachments/assets/red-variant-placeholder)
+
+**Flexoki Moon Toddler**
+
+![flexoki-moon-toddler](https://github.com/user-attachments/assets/toddler-variant-placeholder)
+
 ## Options
 
 > [!IMPORTANT]
 > Configure options _before_ setting colorscheme.
 
-Flexoki has three variants: black, purple, and green. By default, `vim.o.background` is followed, using black when dark.
+Flexoki has five variants: black, purple, green, red, and toddler. By default, `vim.o.background` is followed, using black when dark and toddler when light.
 
 Colour values accept named colours from the palette, e.g. "cyan_two", or valid hex, e.g. "#fa8072".
 
 ```lua
 require("flexoki").setup({
-    variant = "auto", -- auto, black, purple, or green
+    variant = "auto", -- auto, black, purple, green, red, or toddler
     dim_inactive_windows = false,
     extend_background_behind_borders = true,
 
@@ -127,7 +135,9 @@ require("flexoki").setup({
 })
 
 -- Available colorscheme options:
-vim.cmd("colorscheme flexoki-moon-black")  -- Default black variant
+vim.cmd("colorscheme flexoki-moon-black")   -- Default dark variant
 -- vim.cmd("colorscheme flexoki-moon-purple") -- Purple variant  
 -- vim.cmd("colorscheme flexoki-moon-green")  -- Green variant
+-- vim.cmd("colorscheme flexoki-moon-red")    -- Red variant
+-- vim.cmd("colorscheme flexoki-moon-toddler") -- Toddler variant (default light)
 ```

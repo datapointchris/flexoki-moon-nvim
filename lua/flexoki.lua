@@ -1139,6 +1139,15 @@ end
 
 ---@param variant Variant | nil
 function M.colorscheme(variant)
+	-- Handle auto variant selection
+	if variant == "auto" or (variant == nil and config.options.variant == "auto") then
+		if vim.o.background == "light" then
+			variant = config.options.light_variant
+		else
+			variant = config.options.dark_variant
+		end
+	end
+	
 	config.extend_options({ variant = variant })
 
 	vim.opt.termguicolors = true
