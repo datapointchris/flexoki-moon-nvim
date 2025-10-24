@@ -1,4 +1,4 @@
----@alias Variant "black" | "purple" | "green"
+---@alias Variant "black" | "purple" | "green" | "red"
 ---@alias Palette { base: string, surface: string, overlay: string, muted: string, subtle: string, text: string, red_two: string, orange_two: string, magenta_two: string, blue_two: string, cyan_two: string, purple_two: string }
 ---@alias PaletteColor "base" | "surface" | "overlay" | "muted" | "subtle" | "text" | "red_two" | "orange_two" | "magenta_two" | "blue_two" | "cyan_two" | "purple_two" | "highlight_low" | "highlight_med" | "highlight_high"
 ---@alias Highlight { link: string, inherit: boolean } | { fg: string, bg: string, sp: string, bold: boolean, italic: boolean, undercurl: boolean, underline: boolean, underdouble: boolean, underdotted: boolean, underdashed: boolean, strikethrough: boolean, inherit: boolean }
