@@ -1,4 +1,4 @@
----@alias Variant "moon" | "dawn"
+---@alias Variant "black" | "purple" | "green"
 ---@alias Palette { base: string, surface: string, overlay: string, muted: string, subtle: string, text: string, red_two: string, orange_two: string, magenta_two: string, blue_two: string, cyan_two: string, purple_two: string }
 ---@alias PaletteColor "base" | "surface" | "overlay" | "muted" | "subtle" | "text" | "red_two" | "orange_two" | "magenta_two" | "blue_two" | "cyan_two" | "purple_two" | "highlight_low" | "highlight_med" | "highlight_high"
 ---@alias Highlight { link: string, inherit: boolean } | { fg: string, bg: string, sp: string, bold: boolean, italic: boolean, undercurl: boolean, underline: boolean, underdouble: boolean, underdotted: boolean, underdashed: boolean, strikethrough: boolean, inherit: boolean }
@@ -8,13 +8,13 @@ local config = {}
 ---@class Options
 config.options = {
 	---Set the desired variant: "auto" will follow the vim background,
-	---defaulting to `dark_variant` for dark and "dawn" for light.
+	---defaulting to `dark_variant` for dark and "light" for light.
 	---@type "auto" | Variant
 	variant = "auto",
 
 	---Set the desired dark variant when `options.variant` is set to "auto".
 	---@type Variant
-	dark_variant = "moon",
+	dark_variant = "black",
 
 	---Differentiate between active and inactive windows and panels.
 	dim_inactive_windows = false,

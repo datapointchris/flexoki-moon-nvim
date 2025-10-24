@@ -1146,7 +1146,13 @@ function M.colorscheme(variant)
 		vim.cmd("hi clear")
 		vim.cmd("syntax reset")
 	end
-	vim.g.colors_name = "flexoki"
+	
+	-- Set the colors_name to match the actual colorscheme file name
+	if variant then
+		vim.g.colors_name = "flexoki-moon-" .. variant
+	else
+		vim.g.colors_name = "flexoki-moon-black"
+	end
 
 	set_highlights()
 end
