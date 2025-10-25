@@ -1,10 +1,10 @@
 <p align="center">
-    <h2 align="center">Flexoki Moon - Dark Experimental Variants</h2>
+    <h2 align="center">Flexoki Moon - Custom Variants</h2>
 </p>
 
 > Flexoki is an inky color scheme for prose and code. Flexoki is designed for reading and writing on digital screens. It is inspired by analog printing inks and warm shades of paper
 
-This is a personal fork with custom variants (black, purple, green, red, toddler) of the Flexoki colorscheme for Neovim.
+This fork provides custom variants (black, purple, green, red, toddler) of the Flexoki colorscheme for Neovim.
 
 **Credits:**
 
@@ -12,7 +12,7 @@ This is a personal fork with custom variants (black, purple, green, red, toddler
 - Neovim implementation by [nuvic/flexoki-nvim](https://github.com/nuvic/flexoki-nvim)
 - Based on the excellent [rose-pine/neovim](https://github.com/rose-pine/neovim) structure
 
-This fork is primarily for personal use but is available for anyone who finds the variants useful.
+This fork is available for anyone who finds the variants useful.
 
 ## Getting started
 
