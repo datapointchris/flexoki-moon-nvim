@@ -123,7 +123,7 @@ local variants = {
 	},
 	toddler = {
 		_nc = "#4a402f",
-		base = "#342619",
+		base = "#2a1f16",
 		surface = "#3c3426",
 		overlay = "#464132",
 		muted = "#726250",
