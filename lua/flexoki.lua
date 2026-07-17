@@ -1147,7 +1147,7 @@ function M.colorscheme(variant)
 			variant = config.options.dark_variant
 		end
 	end
-	
+
 	config.extend_options({ variant = variant })
 
 	vim.opt.termguicolors = true
@@ -1155,7 +1155,7 @@ function M.colorscheme(variant)
 		vim.cmd("hi clear")
 		vim.cmd("syntax reset")
 	end
-	
+
 	-- Set the colors_name to match the actual colorscheme file name
 	if variant then
 		vim.g.colors_name = "flexoki-moon-" .. variant

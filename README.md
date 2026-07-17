@@ -1,6 +1,4 @@
-<p align="center">
-    <h2 align="center">Flexoki Moon - Custom Variants</h2>
-</p>
+<h1 align="center">Flexoki Moon - Custom Variants</h1>
 
 > Flexoki is an inky color scheme for prose and code. Flexoki is designed for reading and writing on digital screens. It is inspired by analog printing inks and warm shades of paper
 
