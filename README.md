@@ -34,44 +34,34 @@ Install using your favourite plugin manager:
 
 ![flexoki-moon](https://github.com/user-attachments/assets/f29beed6-6cf8-48d3-90cb-b4a10f00e373)
 
-**Flexoki Moon Purple**
-
-![flexoki-moon-purple](https://github.com/user-attachments/assets/purple-variant-placeholder)
-
-**Flexoki Moon Green**
-
-![flexoki-moon-green](https://github.com/user-attachments/assets/green-variant-placeholder)
-
-**Flexoki Moon Red**
-
-![flexoki-moon-red](https://github.com/user-attachments/assets/red-variant-placeholder)
-
-**Flexoki Moon Toddler**
-
-![flexoki-moon-toddler](https://github.com/user-attachments/assets/toddler-variant-placeholder)
-
 ## Options
 
 > [!IMPORTANT]
 > Configure options _before_ setting colorscheme.
 
-Flexoki has five variants: black, purple, green, red, and toddler. By default, `vim.o.background` is followed, using black when dark and toddler when light.
+`:colorscheme flexoki-moon-<variant>` loads that variant whatever `vim.o.background` is. `:colorscheme flexoki-moon-<Tab>` lists the variants.
 
-Colour values accept named colours from the palette, e.g. "cyan_two", or valid hex, e.g. "#fa8072".
+Only `require("flexoki").colorscheme()`, called with no argument while `variant` is `"auto"`, reads the background. It loads `dark_variant` on a dark background and `light_variant` on a light one. After any `:colorscheme flexoki-moon-<variant>`, a no-argument call loads that variant again. Every variant has a dark background, toddler's included.
+
+Colour values accept named colours from the palette, e.g. "cyan_two", Neovim's colour names, e.g. "salmon", or valid hex, e.g. "#fa8072".
 
 ```lua
 require("flexoki").setup({
     variant = "auto", -- auto, black, purple, green, red, or toddler
+    dark_variant = "black",
+    light_variant = "toddler",
     dim_inactive_windows = false,
     extend_background_behind_borders = true,
 
     enable = {
+        legacy_highlights = true,
         terminal = true,
     },
 
     styles = {
         bold = true,
         italic = false,
+        transparency = false,
     },
 
     groups = {
@@ -79,13 +69,13 @@ require("flexoki").setup({
         link = "purple_two",
         panel = "surface",
 
-        error = "red_one",
-        hint = "purple_one",
-        info = "cyan_one",
-        ok = "green_one",
-        warn = "orange_one",
-        note = "blue_one",
-        todo = "magenta_one",
+        error = "red_two",
+        hint = "purple_two",
+        info = "cyan_two",
+        ok = "green_two",
+        warn = "orange_two",
+        note = "blue_two",
+        todo = "magenta_two",
 
         git_add = "green_one",
         git_change = "yellow_one",
@@ -95,7 +85,7 @@ require("flexoki").setup({
         git_merge = "purple_one",
         git_rename = "blue_one",
         git_stage = "purple_one",
-        git_text = "magenta_one",
+        git_text = "blue_one",
         git_untracked = "subtle",
 
         h1 = "purple_two",
@@ -103,7 +93,7 @@ require("flexoki").setup({
         h3 = "magenta_two",
         h4 = "orange_two",
         h5 = "blue_two",
-        h6 = "cyan_two",
+        h6 = "green_two",
     },
 
     palette = {
