@@ -43,7 +43,7 @@ Install using your favourite plugin manager:
 
 Only `require("flexoki").colorscheme()`, called with no argument while `variant` is `"auto"`, reads the background. It loads `dark_variant` on a dark background and `light_variant` on a light one. After any `:colorscheme flexoki-moon-<variant>`, a no-argument call loads that variant again. Every variant has a dark background, toddler's included.
 
-Colour values accept named colours from the palette, e.g. "cyan_two", Neovim's colour names, e.g. "salmon", or valid hex, e.g. "#fa8072".
+Color values accept named colors from the palette, e.g. "cyan_two", Neovim's color names, e.g. "salmon", or valid hex, e.g. "#fa8072".
 
 ```lua
 require("flexoki").setup({
