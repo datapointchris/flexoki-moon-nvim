@@ -1,4 +1,4 @@
---- Rosé Pine for galaxyline fork
+--- Flexoki Moon for galaxyline fork
 --- https://github.com/NTBBloodbath/galaxyline.nvim
 ---
 --- @usage

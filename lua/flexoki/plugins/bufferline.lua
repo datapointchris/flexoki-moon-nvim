@@ -1,4 +1,4 @@
---- Rosé Pine for bufferline
+--- Flexoki Moon for bufferline
 --- https://github.com/akinsho/bufferline.nvim
 ---
 --- @usage

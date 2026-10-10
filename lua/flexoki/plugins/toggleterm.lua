@@ -1,4 +1,4 @@
---- Rosé Pine for toggleterm
+--- Flexoki Moon for toggleterm
 --- https://github.com/akinsho/toggleterm.nvim
 ---
 --- @usage

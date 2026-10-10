@@ -1,4 +1,4 @@
---- Rosé Pine for markid
+--- Flexoki Moon for markid
 --- https://github.com/David-Kunz/markid
 ---
 --- @usage

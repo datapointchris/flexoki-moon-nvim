@@ -1,4 +1,4 @@
---- Rosé Pine for Obsidian(epwalsh)
+--- Flexoki Moon for Obsidian(epwalsh)
 --- https://github.com/epwalsh/obsidian.nvim
 ---
 --- @usage
