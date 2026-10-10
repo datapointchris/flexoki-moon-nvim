@@ -6,12 +6,11 @@ which takes its structure from rose-pine/neovim. Each variant loads as
 
 ## The colorscheme name picks the variant
 
-Each file in `colors/` is two lines. The first clears `package.loaded["flexoki.palette"]`, and the
-second calls `require("flexoki").colorscheme("<variant>")`. Both are required.
+Each file in `colors/` is one line, `require("flexoki").colorscheme("<variant>")`.
 
-- **`palette.lua` resolves the variant once, when it is first required.** It reads
-  `config.options.variant` at that moment and returns that variant's table. A second
-  `colorscheme()` call with the module still cached sets the new name and paints the old palette.
+- **`palette.lua` resolves the variant once, when it is required.** It reads
+  `config.options.variant` at that moment and returns that variant's table. `colorscheme()` drops
+  the cached module before it paints, so the name it sets and the palette it paints agree.
 - **`setup()` records options and applies nothing.** A `colors/` file calling it in place of
   `colorscheme()` loads no highlights.
 - **An explicit variant outranks `setup({ variant = ... })`.** The `variant`, `dark_variant` and
@@ -22,7 +21,8 @@ second calls `require("flexoki").colorscheme("<variant>")`. Both are required.
   `"auto"`.
 
 `vim.g.colors_name` is `flexoki-moon-<variant>`, the name of the `colors/` file that applies it.
-`:colorscheme` cannot reload a name with no file behind it.
+`:colorscheme` cannot reload a name with no file behind it. So `colorscheme()` loads black for a
+variant with no file there, the variant `palette.lua` returns for a name it does not hold.
 
 ## Every variant is dark
 
@@ -35,7 +35,7 @@ scheme. The fork carries none of Flexoki's light palette.
 Adding one takes three edits:
 
 - a table in `variants` in `lua/flexoki/palette.lua`, carrying every key its siblings carry;
-- `colors/flexoki-moon-<name>.lua`, the same two lines as its siblings;
+- `colors/flexoki-moon-<name>.lua`, the same line as its siblings;
 - the name in the `Variant` alias in `lua/flexoki/config.lua`.
 
 A key missing from one variant raises no error. A group reading it is set without that color.
@@ -64,8 +64,12 @@ groups default to `_one`.
 Those modules read `flexoki.palette` when first loaded, so each holds the variant active then.
 
 **`blend` is a color mix computed here.** A group carrying `blend = N` and a `bg` has its `bg`
-replaced by that color mixed N percent over `palette.base`. Tinted backgrounds are written that
-way: the full-strength accent as `bg`, the strength as `blend`.
+replaced by that color mixed N percent over `palette.base`, or over `blend_on` where the group sets
+one. Tinted backgrounds are written that way: the full-strength accent as `bg`, the strength as
+`blend`. `blend_on` takes whatever `bg` takes: a palette key, a hex value or a Neovim color name.
+Both keys are dropped before `nvim_set_hl` once they have mixed. `blend_on` is this scheme's own,
+and `nvim_set_hl` raises on it. Neovim reads `blend` as the group's transparency in floats and the
+popup menu, so a group with `blend` and no `bg` keeps it and gets exactly that.
 
 **`styles.transparency` clears backgrounds group by group.** It overlays `transparency_highlights`
 on the defaults. A new group with a `bg` keeps it in transparent mode unless it is listed there.

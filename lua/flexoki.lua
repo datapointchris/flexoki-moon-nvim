@@ -1099,8 +1099,13 @@ local function set_highlights()
       config.options.before_highlight(group, highlight, palette)
     end
     if highlight.blend ~= nil and (highlight.blend >= 0 and highlight.blend <= 100) and highlight.bg ~= nil then
-      highlight.bg = utilities.blend(highlight.bg, highlight.blend_on or palette.base, highlight.blend / 100)
+      local under = highlight.blend_on and utilities.parse_color(highlight.blend_on) or palette.base
+      highlight.bg = utilities.blend(highlight.bg, under, highlight.blend / 100)
+      -- Neovim reads blend as the group's transparency, and this one was spent on the mix.
+      highlight.blend = nil
     end
+    -- nvim_set_hl raises on a key it does not define, and blend_on is this scheme's own.
+    highlight.blend_on = nil
     vim.api.nvim_set_hl(0, group, highlight)
   end
 
@@ -1138,8 +1143,8 @@ end
 
 ---@param variant Variant | nil
 function M.colorscheme(variant)
-  -- Handle auto variant selection
-  if variant == "auto" or (variant == nil and config.options.variant == "auto") then
+  variant = variant or config.options.variant
+  if variant == "auto" then
     if vim.o.background == "light" then
       variant = config.options.light_variant
     else
@@ -1147,7 +1152,15 @@ function M.colorscheme(variant)
     end
   end
 
+  -- colors_name must name a colors/ file for :colorscheme to reload it, and
+  -- palette.lua paints black for a variant it does not hold.
+  if #vim.api.nvim_get_runtime_file(("colors/flexoki-moon-%s.lua"):format(variant), false) == 0 then
+    variant = "black"
+  end
+
   config.extend_options({ variant = variant })
+  -- palette.lua reads config.options.variant once, when it is required.
+  package.loaded["flexoki.palette"] = nil
 
   vim.opt.termguicolors = true
   if vim.g.colors_name then
@@ -1155,12 +1168,7 @@ function M.colorscheme(variant)
     vim.cmd("syntax reset")
   end
 
-  -- Set the colors_name to match the actual colorscheme file name
-  if variant then
-    vim.g.colors_name = "flexoki-moon-" .. variant
-  else
-    vim.g.colors_name = "flexoki-moon-black"
-  end
+  vim.g.colors_name = "flexoki-moon-" .. variant
 
   set_highlights()
 end
