@@ -1,23 +1,26 @@
 local utilities = {}
 
----@param color string
+---@param color string|integer Hex value, Neovim color name, or 24-bit RGB integer
 local function color_to_rgb(color)
   local function byte(value, offset)
     return bit.band(bit.rshift(value, offset), 0xFF)
   end
 
-  local new_color = vim.api.nvim_get_color_by_name(color)
+  local new_color = type(color) == "number" and color or vim.api.nvim_get_color_by_name(color)
   if new_color == -1 then
-    new_color = vim.opt.background:get() == "dark" and 000 or 255255255
+    new_color = vim.opt.background:get() == "dark" and 0x000000 or 0xFFFFFF
   end
 
   return { byte(new_color, 16), byte(new_color, 8), byte(new_color, 0) }
 end
 
----@param color string Palette key or hex value
+---@param color string|integer Palette key, hex value, Neovim color name, or 24-bit RGB integer
 function utilities.parse_color(color)
   if color == nil then
-    return print("Invalid color: " .. color)
+    return print("Invalid color: nil")
+  end
+  if type(color) == "number" then
+    return color
   end
 
   color = color:lower()
