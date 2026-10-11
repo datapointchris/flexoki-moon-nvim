@@ -1,1 +1,1 @@
-require("flexoki").colorscheme("green")
+require('flexoki').colorscheme('green')

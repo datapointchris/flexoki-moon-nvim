@@ -10,15 +10,15 @@ config.options = {
   ---Set the desired variant: "auto" will follow the vim background,
   ---defaulting to `dark_variant` for dark and `toddler` for light.
   ---@type "auto" | Variant
-  variant = "auto",
+  variant = 'auto',
 
   ---Set the desired dark variant when `options.variant` is set to "auto".
   ---@type Variant
-  dark_variant = "black",
+  dark_variant = 'black',
 
   ---Set the desired light variant when `options.variant` is set to "auto".
   ---@type Variant
-  light_variant = "toddler",
+  light_variant = 'toddler',
 
   ---Differentiate between active and inactive windows and panels.
   dim_inactive_windows = false,
@@ -43,36 +43,36 @@ config.options = {
 
   ---@type table<string, string | PaletteColor>
   groups = {
-    border = "muted",
-    link = "purple_two",
-    panel = "surface",
+    border = 'muted',
+    link = 'purple_two',
+    panel = 'surface',
 
-    error = "red_two",
-    hint = "purple_two",
-    info = "cyan_two",
-    ok = "green_two",
-    warn = "orange_two",
-    note = "blue_two",
-    todo = "magenta_two",
+    error = 'red_two',
+    hint = 'purple_two',
+    info = 'cyan_two',
+    ok = 'green_two',
+    warn = 'orange_two',
+    note = 'blue_two',
+    todo = 'magenta_two',
 
-    git_add = "green_one",
-    git_change = "yellow_one",
-    git_delete = "red_one",
-    git_dirty = "yellow_one",
-    git_ignore = "muted",
-    git_merge = "purple_one",
-    git_rename = "blue_one",
-    git_stage = "purple_one",
-    git_text = "blue_one",
-    git_untracked = "subtle",
+    git_add = 'green_one',
+    git_change = 'yellow_one',
+    git_delete = 'red_one',
+    git_dirty = 'yellow_one',
+    git_ignore = 'muted',
+    git_merge = 'purple_one',
+    git_rename = 'blue_one',
+    git_stage = 'purple_one',
+    git_text = 'blue_one',
+    git_untracked = 'subtle',
 
     ---@type string | PaletteColor
-    h1 = "purple_two",
-    h2 = "cyan_two",
-    h3 = "magenta_two",
-    h4 = "orange_two",
-    h5 = "blue_two",
-    h6 = "green_two",
+    h1 = 'purple_two',
+    h2 = 'cyan_two',
+    h3 = 'magenta_two',
+    h4 = 'orange_two',
+    h5 = 'blue_two',
+    h6 = 'green_two',
   },
 
   ---@type table<string, Highlight>
@@ -90,7 +90,7 @@ config.options = {
 
 ---@param options Options | nil
 function config.extend_options(options)
-  config.options = vim.tbl_deep_extend("force", config.options, options or {})
+  config.options = vim.tbl_deep_extend('force', config.options, options or {})
 end
 
 return config

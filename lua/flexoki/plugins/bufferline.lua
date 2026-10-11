@@ -5,7 +5,7 @@
 --- local highlights = require("flexoki.plugins.bufferline")
 --- require("bufferline").setup({ highlights = highlights })
 
-local p = require("flexoki.palette")
+local p = require('flexoki.palette')
 
 return {
   -- fill = {

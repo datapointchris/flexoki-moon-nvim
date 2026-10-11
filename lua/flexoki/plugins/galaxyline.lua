@@ -4,7 +4,7 @@
 --- @usage
 --- local highlights = require("flexoki.plugins.galaxyline")
 
-local p = require("flexoki.palette")
+local p = require('flexoki.palette')
 
 return {
   bg = p.surface,

@@ -5,7 +5,7 @@
 --- local highlights = require("flexoki.plugins.obsidian")
 --- require("obsidian").setup({ ui = {hl_groups = highlights} })
 
-local p = require("flexoki.palette")
+local p = require('flexoki.palette')
 
 return {
   ObsidianBullet = { fg = p.muted },
