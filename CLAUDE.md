@@ -74,13 +74,21 @@ popup menu, so a group with `blend` and no `bg` keeps it and gets exactly that.
 **`styles.transparency` clears backgrounds group by group.** It overlays `transparency_highlights`
 on the defaults. A new group with a `bg` keeps it in transparent mode unless it is listed there.
 
-## Nothing loads the colorscheme in CI
+## The commit hook loads every variant, and CI loads none
 
-There is no test suite. CI runs the commit hooks, and none of them loads a variant. From the repo
-root, this loads one with no user config, and a load error prints there:
+`tests/colorscheme_spec.lua` loads each `colors/` file in a headless Neovim with no user config.
+The commit hook runs it whenever a Lua file changes. It holds the rules above:
+
+- each variant has a palette of its own, carrying every key its siblings carry;
+- `:colorscheme` sets `colors_name` and paints that variant's `text` as `Normal`;
+- `setup()` paints nothing, and an explicit variant outranks `setup({ variant })`;
+- a variant with no `colors/` file loads black.
 
 ```sh
-nvim --clean --cmd 'set rtp^=.' -c 'colorscheme flexoki-moon-black'
+nvim --headless -u NONE -l tests/colorscheme_spec.lua
 ```
 
-StyLua has no config file here. It takes its two-space indent from `.editorconfig`.
+CI runs a fixed list of lint hooks that excludes this one, so a broken variant passes CI.
+
+StyLua has no config file here. It takes its two-space indent, 140 columns and single quotes from
+`.editorconfig`.
