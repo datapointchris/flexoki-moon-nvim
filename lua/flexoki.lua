@@ -1101,7 +1101,7 @@ local function set_highlights()
     if highlight.blend ~= nil and (highlight.blend >= 0 and highlight.blend <= 100) and highlight.bg ~= nil then
       local under = highlight.blend_on and utilities.parse_color(highlight.blend_on) or palette.base
       highlight.bg = utilities.blend(highlight.bg, under, highlight.blend / 100)
-      -- Neovim reads blend as the group's transparency, and this one was spent on the mix.
+      -- Left set, Neovim would also apply it as the group's transparency in floats and the popup menu.
       highlight.blend = nil
     end
     -- nvim_set_hl raises on a key it does not define, and blend_on is this scheme's own.
@@ -1159,7 +1159,7 @@ function M.colorscheme(variant)
   end
 
   config.extend_options({ variant = variant })
-  -- palette.lua reads config.options.variant once, when it is required.
+  -- palette.lua resolves the variant when it is required, so a cached module paints the previous one.
   package.loaded['flexoki.palette'] = nil
 
   vim.opt.termguicolors = true
