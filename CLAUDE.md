@@ -6,7 +6,7 @@ which takes its structure from rose-pine/neovim. Each variant loads as
 
 ## The colorscheme name picks the variant
 
-Each file in `colors/` is one line, `require("flexoki").colorscheme("<variant>")`.
+Each file in `colors/` is one line, `require('flexoki').colorscheme('<variant>')`.
 
 - **`palette.lua` resolves the variant once, when it is required.** It reads
   `config.options.variant` at that moment and returns that variant's table. `colorscheme()` drops
@@ -22,7 +22,7 @@ Each file in `colors/` is one line, `require("flexoki").colorscheme("<variant>")
 
 `vim.g.colors_name` is `flexoki-moon-<variant>`, the name of the `colors/` file that applies it.
 `:colorscheme` cannot reload a name with no file behind it. So `colorscheme()` loads black for a
-variant with no file there, the variant `palette.lua` returns for a name it does not hold.
+variant with no file there, which is also what `palette.lua` returns for a name it does not hold.
 
 ## Every variant is dark
 
@@ -67,9 +67,9 @@ Those modules read `flexoki.palette` when first loaded, so each holds the varian
 replaced by that color mixed N percent over `palette.base`, or over `blend_on` where the group sets
 one. Tinted backgrounds are written that way: the full-strength accent as `bg`, the strength as
 `blend`. `blend_on` takes whatever `bg` takes: a palette key, a hex value or a Neovim color name.
-Both keys are dropped before `nvim_set_hl` once they have mixed. `blend_on` is this scheme's own,
-and `nvim_set_hl` raises on it. Neovim reads `blend` as the group's transparency in floats and the
-popup menu, so a group with `blend` and no `bg` keeps it and gets exactly that.
+A `blend` that has mixed is dropped before `nvim_set_hl`. `blend_on` is always dropped: it is this
+scheme's own key, and `nvim_set_hl` raises on it. Neovim reads `blend` as the group's transparency
+in floats and the popup menu, so a group with `blend` and no `bg` keeps it and gets exactly that.
 
 **`styles.transparency` clears backgrounds group by group.** It overlays `transparency_highlights`
 on the defaults. A new group with a `bg` keeps it in transparent mode unless it is listed there.
